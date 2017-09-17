@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fizz Buzz</title>
+    </head>
+
+    <body>
+
+        <div>
+            <div class="form-group">
+                <label for="val1">First Integer: </label>
+                <input id="val1" type="number" />
+            </div>
+            <div class="form-group">
+                <label for="val2">Second Integer: </label>
+                <input id="val2" type="number" />
+            </div>
+            <div>
+                <button onclick="processor.calculateFizzBuzz(parseInt(document.getElementById('val1').value), parseInt(document.getElementById('val2').value))">Process</button>
+            </div>
+        </div>
+
+        <div id="results"></div>
+
+        <script src="fizzbuzz.js"></script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fbApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ngFizzBuzz</title>
+
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    </head>
+
+    <body ng-controller="fbController">
+        <form class="form container">
+            <div class="form-group row">
+                <label for="val1">Value 1</label>
+                <input id="val1" class="form-control" type="number" ng-model="val1" />
+            </div>
+            <div class="form-group row">
+                <label for="val2">Value 2</label>
+                <input id="val2" class="form-control" type="number" ng-model="val2" />
+            </div>
+            <input type="button" class="btn btn-primary" ng-click="calculateFizzBuzz()" value="Process" />
+        </form>
+
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>
+                            Value 1
+                        </td>
+                        <td>
+                            Value 2
+                        </td>
+                        <td>
+                            State
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="result in results">
+                        <td>
+                            <span ng-if="$index < val1">{{$index + 1}}</span>
+                        </td>
+                        <td>
+                            <span ng-if="$index < val2">{{$index + 1}}</span>
+                        </td>
+                        <td>
+                            <span ng-if="result.fizz">Fizz</span> <span ng-if="result.buzz">Buzz</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+        <script src="app.js"></script>
+    </body>
+</html>
